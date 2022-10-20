@@ -103,15 +103,18 @@ const states = [
 
 const h2 = document.querySelector('h2');
 const para = document.querySelector('p');
-const section = document.querySelector('section');
+const card = document.getElementById('card');
+
+card.addEventListener("click",flipCard);
+
+function flipCard() {
+    card.classList.toggle("flipCard");
+}
 
 function getCity() {
     const stateChoice = states[Math.floor(Math.random() * states.length)];
     h2.textContent = stateChoice.state;
     para.textContent = stateChoice.cities[Math.floor(Math.random() * 5)];
-    document.getElementById('hidden-state').style.display = "none";
 }
 
-function revealState() {
-    document.getElementById('hidden-state').style.display = "block";
-}
+getCity();

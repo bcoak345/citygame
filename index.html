@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>City Game</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
 </head>
 <body>
         <h1>City Game</h1>
-        <div class="button-wrapper">
         <button onclick="getCity()">Get City</button>
-        <button onclick="revealState()">Reveal State</button>
+        <div class="main-container">
+            <div id="card">
+                <div class="card-front">
+                    <p id="random-city"></p>
+                </div>
+                <div class="card-back">
+                    <h2 id="hidden-state"></h2>
+                </div>
+            </div>
         </div>
-        <h2 id="hidden-state"></h2>
-        <p id="random-city"></p>
-    <script src="script.js"></script>
+        <p class="footer">Copyright © Frozone Enterprises 2022</p>
+<script src="script.js"></script>
 </body>
 </html>

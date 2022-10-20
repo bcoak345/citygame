@@ -1,38 +1,101 @@
 * {
-    font-family: sans-serif;
+    font-family: Roboto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+.main-container {
+    position: relative;
+    width: 320px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25vh;
+    border-radius: 15px;
+}
+
+#card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+.card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: #9F5F80;
+    color: #fafafa;
+    border: 3px solid #fafafa;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 50px 15px rgba(0, 0, 0, 0.25);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.397);
+}
+
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: #9F5F80;
+    color: #fafafa;
+    border: 3px solid #fafafa;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 50px 15px rgba(0, 0, 0, 0.25);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.397);
+
+    transform: rotateY(180deg);
+}
+
+.flipCard {
+    transform: rotateY(180deg);
+}
+
+#random-city, #hidden-state {
+    font-size: 38px;
 }
 
 body {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    height: 100vh;
-    /* background-image: url(./images/skyline.jpg); */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-h1 {
-    font-size: 60px;
-
+    align-items: center;
+    background: #583D72;
 }
 
 button {
-    border-radius: 10px;
     padding: 10px 20px;
+    border-radius: 10px;
     font-size: 16px;
-    margin: 20px;
-    border: solid 2px black;
-    font-weight: bold;
+    background: linear-gradient(#FF8474, #c26255);
+    color: #fafafa;
+    border: 2px solid #fafafa;
+    font-weight: 500;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.25);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.397);
 }
 
-p {
-    font-weight: bold;
-    font-size: 24px;
+h1 {
+    font-size: 48px;
+    margin: 50px 0;
+    color: #fafafa;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.397);
 }
 
-h2 {
-    font-size: 32px;
+.footer {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 5px;
+    color: #fafafa;
 }
-
