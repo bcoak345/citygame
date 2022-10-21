@@ -13,18 +13,21 @@
 </head>
 <body>
         <h1>City Game</h1>
-        <button id="button" onclick="window.location.reload()">Get City</button>
+        <p id="desc">
+            Click the button below to generate a random city.
+            <br><br>Try to guess the state it's in and click on the card to reveal the answer!
+        </p>
+        <button id="button" onclick="getCity()">Generate<br>random city</button>
         <div class="main-container">
             <div id="card">
                 <div class="card-front">
-                    <p id="random-city"></p>
+                    <p id="random-city"><q>Random City</q></p>
                 </div>
                 <div class="card-back">
-                    <h2 id="hidden-state"></h2>
+                    <h2 id="hidden-state"><q>Random State</q></h2>
                 </div>
             </div>
         </div>
-        <p class="footer">Copyright © Frozone Enterprises 2022</p>
 <script src="script.js"></script>
 </body>
 </html>
