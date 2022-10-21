@@ -24,7 +24,7 @@
     height: 100%;
     transform-style: preserve-3d;
     transition: all 0.5s ease;
-    margin-top: 75px;
+    margin-bottom: 30px;
 }
 
 .card-front {
@@ -107,5 +107,6 @@ h1 {
 @media only screen and (max-width: 480px) {
     body {
         background-image: url(./images/skyline.jpg);
+        background-position: 0% 35%;
     }
 }
