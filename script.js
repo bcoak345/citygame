@@ -115,6 +115,8 @@ function getCity() {
     const stateChoice = states[Math.floor(Math.random() * states.length)];
     h2.textContent = stateChoice.state;
     para.textContent = stateChoice.cities[Math.floor(Math.random() * 5)];
-}
+    }
+
+
 
 getCity();
