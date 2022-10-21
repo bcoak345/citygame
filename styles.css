@@ -74,7 +74,7 @@ body {
     flex-direction: column;
     align-items: center;
     background: #583D72;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 #button {
@@ -106,9 +106,7 @@ h1 {
 
 @media only screen and (max-width: 480px) {
     body {
-        background-image: url(./images/skyline.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
+        background: url(./images/skyline.jpg) no-repeat center center fixed;
         background-size: cover;
     }
 }
