@@ -105,9 +105,3 @@ h1 {
     color: #fafafa;
 }
 
-@media only screen and (max-width: 480px) {
-    body {
-        background-image: url(./images/skyline.jpg);
-        height: 100vh;
-    }
-}
