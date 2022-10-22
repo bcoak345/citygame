@@ -122,4 +122,7 @@ function getCity() {
     desc.style.visibility = "hidden";
     }
 
+    preventDefault();
+    window.addEventListener("touchstart", eventListener, {passive:false});
+
 
