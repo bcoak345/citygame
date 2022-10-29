@@ -178,9 +178,6 @@ function updateButton() {
 
 stateQuiz();
 
-// multiple cities from the answer state
-// show correct answer when pressed
-
 
 
 
