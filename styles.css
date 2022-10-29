@@ -4,7 +4,8 @@
     padding: 0;
     box-sizing: border-box;
     font-weight: 500;
-    touch-action: manipulation;
+    touch-action: none;
+    user-select: none;
 }
 
 .main-container {
@@ -24,7 +25,6 @@
     height: 100%;
     transform-style: preserve-3d;
     transition: all 0.5s ease;
-    user-select: none;
 }
 
 .card-front {
