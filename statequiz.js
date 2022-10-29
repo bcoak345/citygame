@@ -161,11 +161,6 @@ function stateQuiz() {
     answer3.style.background = '#9F5F80';
     answer4.style.background = '#9F5F80';
 
-    answer1.style.pointerEvents = 'auto';
-    answer2.style.pointerEvents = 'auto';
-    answer3.style.pointerEvents = 'auto';
-    answer4.style.pointerEvents = 'auto';
-
     answer1.addEventListener('click', updateButton);
     answer2.addEventListener('click', updateButton);
     answer3.addEventListener('click', updateButton);
@@ -180,10 +175,6 @@ function updateButton() {
 
     setTimeout(function() { stateQuiz(); }, 2000);
 
-    answer1.style.pointerEvents = 'none';
-    answer2.style.pointerEvents = 'none';
-    answer3.style.pointerEvents = 'none';
-    answer4.style.pointerEvents = 'none';
 }
 
 stateQuiz();
