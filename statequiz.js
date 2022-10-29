@@ -147,10 +147,10 @@ function stateQuiz() {
     }
 
     question.textContent = stateQuestion.question;
-    answer1.value = stateQuestion.answers[0];
-    answer2.value = stateQuestion.answers[1];
-    answer3.value = stateQuestion.answers[2];
-    answer4.value = stateQuestion.answers[3];
+    answer1.textContent = stateQuestion.answers[0];
+    answer2.textContent = stateQuestion.answers[1];
+    answer3.textContent = stateQuestion.answers[2];
+    answer4.textContent = stateQuestion.answers[3];
 
     for (let i = buttons.children.length; i >= 0; i--) {
         buttons.appendChild(buttons.children[Math.random() * i | 0]);
