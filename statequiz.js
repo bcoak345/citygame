@@ -160,12 +160,12 @@ function stateQuiz() {
     answer2.style.background = '#9F5F80';
     answer3.style.background = '#9F5F80';
     answer4.style.background = '#9F5F80';
-}
 
-answer1.addEventListener('click', updateButton);
-answer2.addEventListener('click', updateButton);
-answer3.addEventListener('click', updateButton);
-answer4.addEventListener('click', updateButton);
+    answer1.addEventListener('click', updateButton);
+    answer2.addEventListener('click', updateButton);
+    answer3.addEventListener('click', updateButton);
+    answer4.addEventListener('click', updateButton);
+}
 
 function updateButton() {
     answer1.style.background = 'linear-gradient(#16f529, #1eb02a)';
@@ -174,6 +174,11 @@ function updateButton() {
     answer4.style.background = '#ff3838';
 
     setTimeout(function() { stateQuiz(); }, 2000);
+
+    answer1.removeEventListener('click', updateButton);
+    answer2.removeEventListener('click', updateButton);
+    answer3.removeEventListener('click', updateButton);
+    answer4.removeEventListener('click', updateButton);
 }
 
 stateQuiz();
