@@ -174,8 +174,8 @@ function updateButton() {
     answer4.style.background = '#ff3838';
 
     setTimeout(function() { stateQuiz(); }, 2000);
-
 }
+
 
 stateQuiz();
 
