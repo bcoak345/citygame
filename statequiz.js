@@ -161,10 +161,10 @@ function stateQuiz() {
     answer3.style.background = '#9F5F80';
     answer4.style.background = '#9F5F80';
 
-    answer1.addEventListener('click', updateButton);
-    answer2.addEventListener('click', updateButton);
-    answer3.addEventListener('click', updateButton);
-    answer4.addEventListener('click', updateButton);
+    answer1.disabled = false;
+    answer2.disabled = false;
+    answer3.disabled = false;
+    answer4.disabled = false;
 }
 
 function updateButton() {
@@ -173,8 +173,14 @@ function updateButton() {
     answer3.style.background = '#ff3838';
     answer4.style.background = '#ff3838';
 
+    answer1.disabled = true;
+    answer2.disabled = true;
+    answer3.disabled = true;
+    answer4.disabled = true;
+
     setTimeout(function() { stateQuiz(); }, 2000);
 }
+
 
 
 stateQuiz();
