@@ -101,61 +101,85 @@ const states = [
     cities: ["Cheyenne", "Casper", "Laramie", "Gillette", "Rock Springs"]}
 ]
 
-const h2 = document.getElementById('hidden-state');
-const para = document.getElementById('random-city');
-const card = document.getElementById('card');
-const desc = document.getElementById('desc')
-
-card.addEventListener("click",flipCard);
-
-function flipCard() {
-    card.classList.toggle("flipCard");
-    h2.style.display = "block";
-}
-
-function getCity() {
-    const stateChoice = states[Math.floor(Math.random() * states.length)];
-    h2.textContent = stateChoice.state;
-    para.textContent = stateChoice.cities[Math.floor(Math.random() * 5)];
-    h2.style.display = "none";
-    card.classList.remove("flipCard");
-    desc.style.visibility = "hidden";
-    }
-
-function preventDefault() {
-    window.addEventListener("touchstart", eventListener, {passive:false});
-}
-
 const stateSelection = states[Math.floor(Math.random() * states.length)];
-
 const stateQuestion = {
     question: `Which city is in ${stateSelection.state}?`,
-    answers: {
-        a: stateSelection.cities[Math.floor(Math.random() * 5)],
-        b: states[Math.floor(Math.random() * states.length)].cities[Math.floor(Math.random() * 5)],
-        c: states[Math.floor(Math.random() * states.length)].cities[Math.floor(Math.random() * 5)],
-        d: states[Math.floor(Math.random() * states.length)].cities[Math.floor(Math.random() * 5)]
-    }
+    answers: [
+        stateSelection.cities[Math.floor(Math.random() * 5)],
+        states[Math.floor(Math.random() * states.length)].cities[Math.floor(Math.random() * 5)],
+        states[Math.floor(Math.random() * states.length)].cities[Math.floor(Math.random() * 5)],
+        states[Math.floor(Math.random() * states.length)].cities[Math.floor(Math.random() * 5)]
+    ]
 }
 
-console.log(stateQuestion.question);
 
 const question = document.getElementById('question');
-const answer = document.getElementById('a');
-const wrong1 = document.getElementById('b');
-const wrong2 = document.getElementById('c');
-const wrong3 = document.getElementById('d'); 
-
+const answer1 = document.getElementById('a');
+const answer2 = document.getElementById('b');
+const answer3 = document.getElementById('c');
+const answer4 = document.getElementById('d');
+const buttons = document.getElementById('button-wrapper');
 
 function stateQuiz() {
+    const stateSelection = states[Math.floor(Math.random() * states.length)];
+    const stateQuestion = {
+    question: `Which city is in ${stateSelection.state}?`,
+    answers: [
+        stateSelection.cities[Math.floor(Math.random() * 5)],
+        states[Math.floor(Math.random() * states.length)].cities[Math.floor(Math.random() * 5)],
+        states[Math.floor(Math.random() * states.length)].cities[Math.floor(Math.random() * 5)],
+        states[Math.floor(Math.random() * states.length)].cities[Math.floor(Math.random() * 5)]
+    ]
+    }
+    
+    if (stateQuestion.answers[1] === stateQuestion.answers[2] || stateQuestion.answers[1] === stateQuestion.answers[3]) {
+        stateQuestion.answers[1] = states[Math.floor(Math.random() * states.length)].cities[Math.floor(Math.random() * 5)];
+    } else if (stateQuestion.answers[2] === stateQuestion.answers[1] || stateQuestion.answers[2] === stateQuestion.answers[3]) {
+        stateQuestion.answers[2] = states[Math.floor(Math.random() * states.length)].cities[Math.floor(Math.random() * 5)];
+    }
+
+    if (stateSelection.cities.includes(stateQuestion.answers[1])) {
+        stateQuestion.answers[1] = states[Math.floor(Math.random() * states.length)].cities[Math.floor(Math.random() * 5)];
+    } else if (stateSelection.cities.includes(stateQuestion.answers[2])) {
+        stateQuestion.answers[2] = states[Math.floor(Math.random() * states.length)].cities[Math.floor(Math.random() * 5)];
+    } else if (stateSelection.cities.includes(stateQuestion.answers[3])) {
+        stateQuestion.answers[3] = states[Math.floor(Math.random() * states.length)].cities[Math.floor(Math.random() * 5)];
+    }
+
     question.textContent = stateQuestion.question;
+    answer1.value = stateQuestion.answers[0];
+    answer2.value = stateQuestion.answers[1];
+    answer3.value = stateQuestion.answers[2];
+    answer4.value = stateQuestion.answers[3];
+
+    for (let i = buttons.children.length; i >= 0; i--) {
+        buttons.appendChild(buttons.children[Math.random() * i | 0]);
+    }
+
+    answer1.style.background = '#9F5F80';
+    answer2.style.background = '#9F5F80';
+    answer3.style.background = '#9F5F80';
+    answer4.style.background = '#9F5F80';
 }
 
+answer1.addEventListener('click', updateButton);
+answer2.addEventListener('click', updateButton);
+answer3.addEventListener('click', updateButton);
+answer4.addEventListener('click', updateButton);
 
+function updateButton() {
+    answer1.style.background = 'linear-gradient(#16f529, #1eb02a)';
+    answer2.style.background = '#ff3838';
+    answer3.style.background = '#ff3838';
+    answer4.style.background = '#ff3838';
+
+    setTimeout(function() { stateQuiz(); }, 2000);
+}
 
 stateQuiz();
 
-
+// multiple cities from the answer state
+// show correct answer when pressed
 
 
 
