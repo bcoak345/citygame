@@ -101,17 +101,6 @@ const states = [
     cities: ["Cheyenne", "Casper", "Laramie", "Gillette", "Rock Springs"]}
 ]
 
-const stateSelection = states[Math.floor(Math.random() * states.length)];
-const stateQuestion = {
-    question: `Which city is in ${stateSelection.state}?`,
-    answers: [
-        stateSelection.cities[Math.floor(Math.random() * 5)],
-        states[Math.floor(Math.random() * states.length)].cities[Math.floor(Math.random() * 5)],
-        states[Math.floor(Math.random() * states.length)].cities[Math.floor(Math.random() * 5)],
-        states[Math.floor(Math.random() * states.length)].cities[Math.floor(Math.random() * 5)]
-    ]
-}
-
 
 const question = document.getElementById('question');
 const answer1 = document.getElementById('a');
@@ -179,6 +168,10 @@ function updateButton() {
     answer4.disabled = true;
 
     setTimeout(function() { stateQuiz(); }, 2000);
+}
+
+function preventDefault() {
+    window.addEventListener("touchstart", eventListener, {passive:false});
 }
 
 

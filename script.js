@@ -138,23 +138,6 @@ const stateQuestion = {
     }
 }
 
-console.log(stateQuestion.question);
-
-const question = document.getElementById('question');
-const answer = document.getElementById('a');
-const wrong1 = document.getElementById('b');
-const wrong2 = document.getElementById('c');
-const wrong3 = document.getElementById('d'); 
-
-
-function stateQuiz() {
-    question.textContent = stateQuestion.question;
-}
-
-
-
-stateQuiz();
-
 
 
 
