@@ -108,6 +108,7 @@ const answer2 = document.getElementById('b');
 const answer3 = document.getElementById('c');
 const answer4 = document.getElementById('d');
 const buttons = document.getElementById('button-wrapper');
+const answers = document.querySelectorAll('button');
 
 function stateQuiz() {
     const stateSelection = states[Math.floor(Math.random() * states.length)];
@@ -144,29 +145,19 @@ function stateQuiz() {
     for (let i = buttons.children.length; i >= 0; i--) {
         buttons.appendChild(buttons.children[Math.random() * i | 0]);
     }
-
-    answer1.style.background = '#9F5F80';
-    answer2.style.background = '#9F5F80';
-    answer3.style.background = '#9F5F80';
-    answer4.style.background = '#9F5F80';
-
-    answer1.disabled = false;
-    answer2.disabled = false;
-    answer3.disabled = false;
-    answer4.disabled = false;
+    answers.forEach(button => button.style.background = '#9F5F80');
+    answers.forEach(button => button.disabled = false);
 }
 
 function updateButton() {
-    answer1.style.background = 'linear-gradient(#16f529, #1eb02a)';
-    answer2.style.background = '#ff3838';
-    answer3.style.background = '#ff3838';
-    answer4.style.background = '#ff3838';
-
-    answer1.disabled = true;
-    answer2.disabled = true;
-    answer3.disabled = true;
-    answer4.disabled = true;
-
+    answers.forEach(button => {
+        if (button == answer1) {
+            button.style.background = 'linear-gradient(#16f529, #1eb02a)';
+        } else {
+            button.style.background = '#ff3838';
+        }
+    })
+    answers.forEach(button => button.disabled = true);
     setTimeout(function() { stateQuiz(); }, 2000);
 }
 
@@ -174,9 +165,12 @@ function preventDefault() {
     window.addEventListener("touchstart", eventListener, {passive:false});
 }
 
+answers.forEach(button => button.addEventListener('click', updateButton));
+
 
 
 stateQuiz();
+preventDefault();
 
 
 
